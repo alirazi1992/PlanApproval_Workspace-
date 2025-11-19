@@ -7,11 +7,6 @@ const baseWorkspaceTabs: WorkspaceTab[] = [{
   description: 'تمرکز بر مالکیت، ارجاع و هشدار SLA',
   accent: 'from-sky-50 to-indigo-50'
 }, {
-  id: 'calendar',
-  label: 'مسیر تقویمی',
-  description: 'برنامه‌ریزی بازدیدها و همپوشانی تیم‌ها',
-  accent: 'from-emerald-50 to-teal-50'
-}, {
   id: 'reports',
   label: 'میز گزارش‌گیری',
   description: 'تحلیل کیفیت اجرا و آماده‌سازی خروجی‌ها',
@@ -25,14 +20,13 @@ const baseWorkspaceTabs: WorkspaceTab[] = [{
 
 export const workspaceTabs: WorkspaceTab[] = [
   baseWorkspaceTabs[0],
-  baseWorkspaceTabs[1],
   {
     id: 'calendarPath',
     label: 'Ù…Ø³ÛŒØ± ØªÙ‚ÙˆÛŒÙ…ÛŒ',
     description: 'Ù¾ÛŒÚ¯ÛŒØ±ÛŒ Ù…Ø³ÛŒØ± Ø²Ù…Ø§Ù†ÛŒ Ù¾Ø±ÙˆÙ†Ø¯Ù‡â€ŒÙ‡Ø§ÛŒ Ø­ÛŒØ§ØªÛŒ Ùˆ Ù‡Ù…Ø§Ù‡Ù†Ú¯ÛŒ ØªÛŒÙ…â€ŒÙ‡Ø§ÛŒ Ù…ÛŒØ¯Ø§Ù†ÛŒ',
     accent: 'from-cyan-50 to-sky-100'
   },
-  ...baseWorkspaceTabs.slice(2)
+  ...baseWorkspaceTabs.slice(1)
 ];
 
 export const workspaceSnapshots = {
@@ -80,47 +74,6 @@ export const workspaceSnapshots = {
       title: 'آماده‌سازی گزارش برای تماس مدیران',
       owner: 'فاطمه کریمی',
       due: 'جمعه'
-    }]
-  },
-  calendar: {
-    headline: 'کنترل تقویم میدانی',
-    subline: '۷ بازدید قطعی · ۳ بازه در انتظار تایید',
-    priority: 'پیش از فریز لجستیک، برنامه چرخشی بازدیدها را نهایی کنید.',
-    metrics: [{
-      id: 'calendar-lock',
-      label: 'بازه‌های قفل‌شده',
-      value: '۹',
-      trend: {
-        isPositive: true,
-        value: '+۱'
-      }
-    }, {
-      id: 'calendar-drifts',
-      label: 'انحراف برنامه',
-      value: '۳',
-      trend: {
-        isPositive: false,
-        value: '-۸%'
-      }
-    }, {
-      id: 'calendar-collab',
-      label: 'همپوشانی تیم‌ها',
-      value: '۵',
-      trend: {
-        isPositive: true,
-        value: '+۱۸%'
-      }
-    }],
-    reminders: [{
-      id: 'calendar-1',
-      title: 'تایید دسترسی حوض خشک با یارد A',
-      owner: 'حسین جلالی',
-      due: 'امروز'
-    }, {
-      id: 'calendar-2',
-      title: 'هماهنگی با QA برای تست بارگیری',
-      owner: 'سارا رحیمی',
-      due: 'فردا ۱۱:۰۰'
     }]
   },
   reports: {
@@ -276,7 +229,6 @@ const cloneIslands = (islands: Island[]): Island[] => islands.map(island => ({
 export function createInitialJourneyState(): JourneyState {
   return {
     cases: cloneIslands(journeyBase),
-    calendar: cloneIslands(journeyBase),
     calendarPath: cloneIslands(journeyBase),
     reports: cloneIslands(journeyBase),
     workbench: cloneIslands(journeyBase)
@@ -289,12 +241,6 @@ export const workspaceTabsFixed: WorkspaceTab[] = [
     label: 'تابلوی پرونده‌ها',
     description: 'تمرکز بر مالکیت، ارجاع و هشدار SLA',
     accent: 'from-sky-50 to-indigo-50'
-  },
-  {
-    id: 'calendar',
-    label: 'مسیر تقویمی',
-    description: 'برنامه‌ریزی بازدیدها و همپوشانی تیم‌ها',
-    accent: 'from-emerald-50 to-teal-50'
   },
   {
     id: 'calendarPath',

@@ -26,11 +26,6 @@ const workspaceShortcuts: SidebarNavItem[] = [{
   label: 'پرونده‌های ارجاعی',
   workspace: 'cases'
 }, {
-  id: 'shortcut-calendar',
-  icon: 'calendarDays',
-  label: 'برنامه روزانه',
-  workspace: 'calendar'
-}, {
   id: 'shortcut-reports',
   icon: 'chart',
   label: 'گزارش و تحلیل',
